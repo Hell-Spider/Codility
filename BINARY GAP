@@ -1,0 +1,14 @@
+//BINARY GAP Program
+
+static int binarygap_2(long n)
+	{
+		int c=0,i=0;                        // 'c' variable for the final max count and 'i' for temporary max count
+		while(n%2==0) {n=n>>1;}             //Removing trailing zeroes from the binary conversion
+		while(n>0)                          //while loop for increasing the i value between two 1 in the binary conversion
+		{                                   
+			if(n%2==0) {i++;} 
+			else { c=i>c?i:c; i=0;}
+			n=n>>1;
+		}
+		return c;                          //returning the final max binary gap 
+	}
